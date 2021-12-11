@@ -1,0 +1,35 @@
+select emp_no, first_name, last_name 
+from retirement_titles
+
+-- Use Dictinct with Orderby to remove duplicate rows
+SELECT DISTINCT ON (emp_no)
+emp_no,
+first_name,
+last_name,
+title
+INTO unique_titles
+FROM retirement_titles
+ORDER BY emp_no, to_date DESC;
+
+select * from unique_titles
+
+-- number of employees about to retire
+select count (emp_no) from unique_titles
+--90,398. (number of all rows)
+
+--retrieve number of unique titles (failed)
+select distinct title from unique_titles
+--returns list of 7 unique title names
+
+--retrieve number of unique titles (failed)
+select count (distinct title) from unique_titles
+-- returns just the number 7
+
+--retrieve number of unique titles
+select count (title), title
+into retiring_titles
+from unique_titles
+group by unique_titles.title
+order by count desc
+
+select * from retiring_titles
