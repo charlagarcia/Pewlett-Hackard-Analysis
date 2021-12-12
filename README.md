@@ -21,3 +21,6 @@ Pewlett Hackard will have thousands of job openings in the near future due to re
 - The "Mentorship Eligibility" list only has just over 1500 names, which won't even touch the surface of filling the needed vacancies.
 - I would suggest changing the filter of eligibility to show time with the company, not age.  Narrowing this search to include only people born in 1965 means that not only are we looking over dedicated employees who might have the necessary experience for advancement, we're also ensuring that PH is in the same predicament 10 years from now.  
 - If we open up the age range for the mentorship program and look at years of service instead, we will have a much larger pool of employees to choose from when filling the 90,000+ vacancies that are sure to arise, and those employees will not all be retiring at the same time ten years from now.
+![mentorship2](https://github.com/charlagarcia/Pewlett-Hackard-Analysis/blob/main/Redefined%20mentorship%20eligibility.png)
+- By filtering prospects to employees who have been with the company for 10 or more years, we will have over 230,000 potential leaders who choose from.
+![mentorship_count](https://github.com/charlagarcia/Pewlett-Hackard-Analysis/blob/main/redefined%20mentorship%20count.png)
