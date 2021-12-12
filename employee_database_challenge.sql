@@ -113,3 +113,35 @@ group by unique_titles.title
 order by count desc
 
 select * from retiring_titles
+
+--------------------------------------------------------
+
+-- del 2, employees eligible for mentorship program
+-- create mentorship eligibility table 
+-- current employees born 1/1/65 - 12/31/65
+
+select emp_no, first_name, last_name, birth_date
+from employees
+
+select from_date, to_date from dept_emp
+
+select title from titles
+
+--employees eligible for mentorship program
+select  distinct on (emp_no)
+	e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	titles.title
+into mentorship_eligibility
+from employees as e
+join dept_emp as de
+on e.emp_no = de.emp_no
+join titles
+on e.emp_no = titles.emp_no
+where birth_date between '1965-01-01' and '1965-12-31'
+and de.to_date = ('9999-01-01')
+ORDER BY emp_no;
