@@ -168,3 +168,5 @@ and de.to_date = ('9999-01-01')
 ORDER BY emp_no;
 
 select count (emp_no) from mentorship_eligibility2
+
+select count (emp_no) from mentorship_eligibility
