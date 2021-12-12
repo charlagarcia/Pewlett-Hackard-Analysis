@@ -145,3 +145,26 @@ on e.emp_no = titles.emp_no
 where birth_date between '1965-01-01' and '1965-12-31'
 and de.to_date = ('9999-01-01')
 ORDER BY emp_no;
+
+--------------------------------------------------------------
+--employees eligible for mentorship program 
+--reconfigured by time with company (10 yrs)
+select  distinct on (emp_no)
+	e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	titles.title
+into mentorship_eligibility2
+from employees as e
+join dept_emp as de
+on e.emp_no = de.emp_no
+join titles
+on e.emp_no = titles.emp_no
+where de.from_date between '1965-01-01' and '2001-12-31'
+and de.to_date = ('9999-01-01')
+ORDER BY emp_no;
+
+select count (emp_no) from mentorship_eligibility2
